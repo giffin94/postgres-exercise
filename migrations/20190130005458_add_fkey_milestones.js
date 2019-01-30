@@ -2,8 +2,7 @@
 exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.table('milestones', (table) => {
-      table.integer('fid');
-      table.foreign('fid').references('id').inTable('famous_people');
+      table.integer('fid').references('famous_people.id');
     })
   ]);
 };
